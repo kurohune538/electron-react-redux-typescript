@@ -1,0 +1,6 @@
+/es
+/lib
+/dist
+/example
+/coverage
+!.storybook

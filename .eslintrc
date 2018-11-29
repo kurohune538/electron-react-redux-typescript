@@ -1,0 +1,45 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:node/recommended",
+        "prettier"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2019
+    },
+    "plugins": [
+        "node"
+    ],
+    "root": true,
+    "overrides": [
+        {
+            "files": [
+                "webpack.config.js",
+                ".storybook/**/*.js"
+            ],
+            "excludedFiles": [
+                ".storybook/webpack.config.js"
+            ],
+            "env": {
+                "commonjs": true
+            },
+            "parserOptions": {
+                "sourceType": "module"
+            },
+            "rules": {
+                "node/no-unsupported-features/es-syntax": [
+                    2,
+                    {
+                        "ignores": [
+                            "modules"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
